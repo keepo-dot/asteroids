@@ -14,10 +14,13 @@ def main():
 
 
     while 1:
-        screen.fill((0,0,0))
+
         for event in pygame.event.get():
              if event.type == pygame.QUIT:
                 return
+
+        screen.fill((0,0,0))
+        screen.flip()
 
 
 # ========= END ===========
