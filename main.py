@@ -5,6 +5,7 @@ from constants import *
 from player import Player
 from asteroid import *
 from asteroidfield import *
+import sys
 
 # ---------- END ----------
 
@@ -33,6 +34,9 @@ def main():
 
         screen.fill((0,0,0))
         updatable.update(dt)
+        for thing in asteroids:
+            if player.collision(thing) == True:
+                sys.exit("Game over!")
         for thing in drawable:
             thing.draw(screen)
         dt = my_clock.tick(60) / 1000
