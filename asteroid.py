@@ -7,6 +7,7 @@ class Asteroid(circleshape.CircleShape):
     def __init__(self, x, y, radius, asteroid_field_class):
         super().__init__(x, y, radius)
         self.radius = radius
+        self.asteroid_field_class = asteroid_field_class
     def draw(self, screen):
         pygame.draw.circle(screen, (255, 255, 255), (self.position.x, self.position.y), self.radius, 2)
 
