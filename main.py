@@ -37,8 +37,13 @@ def main():
         screen.fill((0,0,0))
         updatable.update(dt)
         for thing in asteroids:
+            for thing2 in player.shots:
+                if thing2.collision(thing):
+                    thing.kill()
+                    thing2.kill()
             if player.collision(thing) == True:
                 sys.exit("Game over!")
+
         for thing in drawable:
             thing.draw(screen)
         dt = my_clock.tick(60) / 1000
