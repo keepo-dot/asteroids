@@ -21,5 +21,5 @@ class Asteroid(circleshape.CircleShape):
         v1 =  self.velocity.rotate(spawn_angle) * 1.2
         v2 = self.velocity.rotate(spawn_angle * -1) * 1.2
         new_radius = self.radius - ASTEROID_MIN_RADIUS
-        new_asteroid1 = asteroid_field_class.spawn(self, new_radius, self.position, v1)
-        new_asteroid2 = asteroid_field_class.spawn(self, new_radius, self.position, v2)
+        new_asteroid1 = self.asteroid_field_class.spawn(self, new_radius, self.position, v1)
+        new_asteroid2 = self.asteroid_field_class.spawn(self, new_radius, self.position, v2)
